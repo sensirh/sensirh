@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Aura Shoot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #220000, #000000 70%);
+      color: white;
+      text-align: center;
+    }
+
+    .top-alert {
+      background: linear-gradient(90deg, red, darkred);
+      padding: 12px;
+      font-weight: bold;
+      text-shadow: 0 0 10px red;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .logo {
+      font-size: 42px;
+      font-weight: bold;
+      color: red;
+      text-shadow: 0 0 20px red, 0 0 40px darkred;
+      margin: 20px 0;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      margin-bottom: 25px;
+      color: #ffb3b3;
+    }
+
+    .video-box {
+      border: 3px solid red;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 30px red;
+      margin-bottom: 30px;
+    }
+
+    video {
+      width: 100%;
+      display: block;
+    }
+
+    .offer-box {
+      background: linear-gradient(145deg, #110000, #000);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 0 40px red;
+      margin-bottom: 30px;
+    }
+
+    .price-old {
+      text-decoration: line-through;
+      color: gray;
+      font-size: 20px;
+    }
+
+    .price-new {
+      font-size: 42px;
+      color: #00ff6a;
+      text-shadow: 0 0 20px #00ff6a;
+      margin: 10px 0;
+    }
+
+    .buy-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 18px 40px;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      background: linear-gradient(90deg, red, #ff004c, red);
+      box-shadow: 0 0 25px red, 0 0 60px #ff004c;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px red, 0 0 40px #ff004c; }
+      50% { box-shadow: 0 0 35px red, 0 0 80px #ff004c; }
+      100% { box-shadow: 0 0 15px red, 0 0 40px #ff004c; }
+    }
+
+    .faq {
+      margin-top: 50px;
+      text-align: left;
+    }
+
+    .faq h2 {
+      text-align: center;
+      color: red;
+      text-shadow: 0 0 15px red;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      background: #0d0000;
+      border: 1px solid red;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 10px;
+      box-shadow: 0 0 10px red;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-alert">
+    ⚠️ ATENÇÃO: OFERTA LIMITADA – DESCONTO ATIVO AGORA!
+  </div>
+
+  <div class="container">
+
+    <div class="logo">AURA SHOOT</div>
+    <div class="subtitle">
+      Painel de otimização e ajustes avançados para melhorar sua gameplay
+    </div>
+
+    <!-- VÍDEO -->
+    <div class="video-box">
+      <!-- TROCA O SRC DO VÍDEO PELO TEU -->
+      <video controls autoplay muted>
+        <source src="TEU_VIDEO_AQUI.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+
+    <!-- OFERTA -->
+    <div class="offer-box">
+      <h2>🔥 PLANO ÚNICO DISPONÍVEL</h2>
+      <p class="price-old">De R$ 62,90</p>
+      <p class="price-new">Por apenas R$ 32,90</p>
+
+      <!-- TROCA O LINK PELO TEU DA LASTLINK -->
+      <a href="TEU_LINK_DA_LASTLINK_AQUI" class="buy-button">
+        COMPRAR AGORA
+      </a>
+    </div>
+
+    <!-- DÚVIDAS -->
+    <div class="faq">
+      <h2>DÚVIDAS FREQUENTES</h2>
+
+      <div class="faq-item">
+        <b>✅ Funciona em qualquer celular?</b><br>
+        Sim, o painel é compatível com a maioria dos dispositivos Android.
+      </div>
+
+      <div class="faq-item">
+        <b>💳 O pagamento é seguro?</b><br>
+        Sim, o pagamento é feito por plataforma segura com proteção ao comprador.
+      </div>
+
+      <div class="faq-item">
+        <b>⚡ Recebo o acesso na hora?</b><br>
+        Sim, após o pagamento o acesso é liberado automaticamente.
+      </div>
+
+      <div class="faq-item">
+        <b>📞 Tem suporte?</b><br>
+        Sim, você recebe suporte direto após a compra.
+      </div>
+    </div>
+
+    <footer>
+      © 2025 - Aura Shoot • Todos os direitos reservados
+    </footer>
+
+  </div>
+
+</body>
+</html>
