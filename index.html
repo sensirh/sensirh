@@ -1,142 +1,135 @@
-# index.html — versão única (todo o site em um arquivo)
-
-```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>XIT Mobile — Versão Vermelha</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Shoot — Ativação</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
   <style>
     :root{
-      --bg:#120000;
-      --red-900:#8b0000;
-      --red-700:#c21a1a;
-      --red-500:#e23b3b;
-      --muted:#f6f6f6;
-      --glass: rgba(255,255,255,0.06);
-      --radius: 14px;
-      --maxw:1100px;
+      --bg:#050507;
+      --card:#0b0b10;
+      --neon:#ef4444; /* vermelho */
+      --neon2:#22c55e; /* verde */
+      --text:#ffffff;
+      --muted:#c7c7c7;
+      --danger:#ef4444;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
-      margin:0;
-      font-family:Inter,system-ui,Arial;
-      background:linear-gradient(180deg,var(--bg),#2a0808);
-      color:var(--muted);
-      -webkit-font-smoothing:antialiased;
+      margin:0; font-family:Inter,system-ui,Arial; background:radial-gradient(1200px 600px at 50% -10%, #1a0f2e 0%, var(--bg) 55%);
+      color:var(--text);
     }
-    .site-header{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:18px 24px;max-width:var(--maxw);margin:0 auto;
+    .container{max-width:980px; margin:0 auto; padding:20px}
+    .badge{
+      display:inline-block; padding:8px 14px; border-radius:999px; background:rgba(139,92,246,.15);
+      color:var(--neon); border:1px solid rgba(139,92,246,.35); font-weight:600
     }
-    .brand{display:flex;flex-direction:column}
-    .logo{font-weight:800;font-size:22px;color:var(--red-500)}
-    .subtitle{font-size:12px;opacity:.8}
-    .top-cta .btn{margin-left:8px}
-    .btn{
-      display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;
-      background:linear-gradient(90deg,var(--red-700),var(--red-500));color:white;box-shadow:0 6px 18px rgba(0,0,0,0.45);
+    .hero{
+      background:linear-gradient(180deg, rgba(139,92,246,.12), transparent 60%);
+      border:1px solid rgba(139,92,246,.25); border-radius:20px; padding:28px; box-shadow:0 0 0 1px rgba(139,92,246,.15) inset
     }
-    .btn.outline{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--muted)}
-    .btn.big{padding:14px 20px;font-size:16px}
-    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;max-width:var(--maxw);margin:32px auto;padding:20px}
-    .hero-left h1{font-size:36px;margin:0 0 12px;color:var(--red-500)}
-    .hero-left p{opacity:.9;margin:0 0 18px}
-    .hero-buttons{display:flex;gap:12px;margin-bottom:14px}
-    .features{display:flex;gap:12px;list-style:none;padding:0;margin:0;color:rgba(255,255,255,0.8)}
-    .device-mock{display:flex;justify-content:center}
-    .screen{width:280px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:20px;padding:18px;box-shadow:0 12px 40px rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.03)}
-    .mock-header{background:linear-gradient(90deg,var(--red-700),var(--red-500));padding:8px;border-radius:12px;font-weight:700;text-align:center}
-    .mock-content{margin-top:12px}
-    .mock-content .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
-    .downloads, .pricing{max-width:var(--maxw);margin:20px auto;padding:22px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:16px}
-    .stores{display:flex;gap:12px}
-    .store{padding:12px 16px;border-radius:10px;text-decoration:none;background:rgba(0,0,0,0.3)}
-    .price-card{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-    .price{font-size:28px;color:var(--red-500);font-weight:800}
-    .site-footer{text-align:center;padding:28px 12px;opacity:0.8}
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr;gap:18px;padding:14px}
-      .hero-right{order:-1}
+    h1{font-size:40px; line-height:1.1; margin:14px 0}
+    .strike{opacity:.6; text-decoration:line-through}
+    .price{font-size:44px; font-weight:800; color:var(--neon2)}
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:16px 22px; border-radius:14px; background:linear-gradient(90deg, var(--neon), #6d28d9);
+      color:white; text-decoration:none; font-weight:800; letter-spacing:.3px; box-shadow:0 10px 30px rgba(139,92,246,.35)
     }
+    .cta.secondary{background:transparent; border:1px solid rgba(139,92,246,.5); color:var(--text)}
+    .grid{display:grid; gap:18px}
+    .grid-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border:1px solid rgba(139,92,246,.25); border-radius:18px; padding:22px
+    }
+    .video{position:relative; padding-top:56.25%; border-radius:16px; overflow:hidden; border:1px solid rgba(139,92,246,.25)}
+    .video iframe, .video video{position:absolute; inset:0; width:100%; height:100%}
+    .list{list-style:none; padding:0; margin:0}
+    .list li{display:flex; gap:10px; padding:8px 0; color:var(--muted)}
+    .check{color:var(--neon2)}
+    .stars{color:#facc15; letter-spacing:4px; font-size:22px}
+    .sticky{
+      position:fixed; left:0; right:0; bottom:10px; display:flex; justify-content:center; pointer-events:none
+    }
+    .sticky .cta{pointer-events:auto}
+    footer{opacity:.6; text-align:center; padding:30px 10px}
+    @media(max-width:640px){ h1{font-size:32px} .price{font-size:36px} }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <div class="logo">XIT</div>
-      <div class="subtitle">Mobile • Painel Estético</div>
-    </div>
-    <nav class="top-cta">
-      <a class="btn ios" href="#download">iOS</a>
-      <a class="btn android" href="#download">Android</a>
-    </nav>
-  </header>
-
-  <main>
+  <div class="container">
+    <!-- HERO / DESCONTO -->
     <section class="hero">
-      <div class="hero-left">
-        <h1>Transforme sua sensibilidade</h1>
-        <p>Pacote completo — ajustes, presets e ferramentas para melhorar sua mira e sensibilidade.</p>
-        <div class="hero-buttons">
-          <a class="btn big" href="#comprar">Comprar via PIX</a>
-          <a class="btn outline" href="https://wa.me/5591999999999" target="_blank">Contato WhatsApp</a>
+      <span class="badge">🔥 OFERTA LIMITADA</span>
+      <h1>Ative o <span style="color:white">Painel</span> <span style="color:var(--neon)">AURA SHOOT</span></h1>
+      <p class="muted">Acesso imediato com melhorias reais no desempenho.</p>
+      <div class="grid grid-2">
+        <div>
+          <p><span class="strike">R$ 62,90</span></p>
+          <div class="price">R$ 32,90</div>
+          <a class="cta" href="https://lastlink.com/seulink">EU QUERO ATIVAR AGORA</a>
         </div>
-        <ul class="features">
-          <li>Compatível Android & iOS</li>
-          <li>Instalação rápida</li>
-          <li>Suporte por WhatsApp</li>
+        <div class="card">
+          <ul class="list">
+            <li><span class="check">✔</span> Atualizações contínuas</li>
+            <li><span class="check">✔</span> Configuração simples</li>
+            <li><span class="check">✔</span> Suporte incluso</li>
+            <li><span class="check">✔</span> Acesso imediato</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- VÍDEO -->
+    <section class="card" style="margin-top:22px">
+      <h2>Assista o vídeo com atenção</h2>
+      <div class="video">
+        <!-- Troque pelo seu vídeo -->
+        <video src="assets/video.mp4" controls muted></video>
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="grid grid-2" style="margin-top:22px">
+      <div class="card">
+        <h3>Benefícios</h3>
+        <ul class="list">
+          <li><span class="check">✔</span> Melhor resposta e precisão</li>
+          <li><span class="check">✔</span> Perfis otimizados</li>
+          <li><span class="check">✔</span> Compatibilidade ampla</li>
         </ul>
       </div>
-      <div class="hero-right">
-        <div class="device-mock">
-          <div class="screen">
-            <div class="mock-header">XIT • Painel</div>
-            <div class="mock-content">
-              <div class="row"><span>Modo:</span><strong>Rápido</strong></div>
-              <div class="row"><span>Sensibilidade:</span><strong>1.25</strong></div>
-              <div class="row"><span>Gyro:</span><strong>On</strong></div>
-            </div>
-          </div>
-        </div>
+      <div class="card">
+        <h3>Prova Social</h3>
+        <div class="stars">★★★★★</div>
+        <p>+5.000 pessoas já usam</p>
+        <p class="muted">“Diferença sentida no primeiro dia.”</p>
       </div>
     </section>
 
-    <section id="download" class="downloads">
-      <h2>Baixe agora</h2>
-      <div class="stores">
-        <a class="store android" href="#">Android (APK)</a>
-        <a class="store ios" href="#">iOS (TestFlight/Link)</a>
-      </div>
+    <!-- PLANO -->
+    <section class="card" style="margin-top:22px">
+      <h2>Plano Único</h2>
+      <p><span class="strike">R$ 62,90</span> <strong>R$ 32,90</strong></p>
+      <ul class="list">
+        <li><span class="check">✔</span> Sem mensalidade</li>
+        <li><span class="check">✔</span> Pagamento seguro</li>
+        <li><span class="check">✔</span> Acesso 24h</li>
+      </ul>
+      <a class="cta" href="https://lastlink.com/seulink">EU QUERO</a>
     </section>
+  </div>
 
-    <section id="comprar" class="pricing">
-      <h2>Pacote Completo</h2>
-      <div class="price-card">
-        <div class="price">R$ 19,90</div>
-        <p>Pagamento rápido via PIX — confirmação automática.</p>
-        <a class="btn big" href="#">Pagar com PIX</a>
-      </div>
-    </section>
+  <!-- CTA STICKY MOBILE -->
+  <div class="sticky">
+    <a class="cta" href="https://lastlink.com/seulink">ATIVAR AGORA</a>
+  </div>
 
-    <footer class="site-footer">
-      <p>© <span id="year"></span> XIT — Todos os direitos reservados</p>
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const pixBtns = document.querySelectorAll('a[href="#comprar"], a[href*="PIX"], .btn.big');
-    pixBtns.forEach(b => b.addEventListener('click', (e) =>{
-      e.preventDefault();
-      alert('Aqui você abriria o fluxo real de pagamento PIX.');
-    }));
-  </script>
+  <footer>
+    <img src="assets/logo.png" alt="Aura Shoot" style="max-width:140px;opacity:.8"/>
+    <p>© Aura Shoot</p>
+  </footer>
 </body>
 </html>
-```
