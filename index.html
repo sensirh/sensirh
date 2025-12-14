@@ -3,171 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AURA SHOOT — Ativação</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <title>Aura Shoot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,Arial;
-      background:#050507;
-      color:#fff;
-      display:flex;
-      justify-content:center;
-      padding:20px 10px 120px;
-    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Orbitron',sans-serif}
+    body{background:#000;color:#fff}
 
-    .card{
-      width:100%;
-      max-width:420px;
-      background:radial-gradient(120% 120% at 50% 0%, #2b0f3a 0%, #0b0712 60%);
-      border-radius:26px;
-      padding:26px 22px 28px;
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.06),
-        0 25px 80px rgba(124,58,237,.35);
-    }
+    .top-bar{background:#ff1a1a;text-align:center;padding:10px;font-weight:700;font-size:14px}
 
-    .badge{
-      display:inline-block;
-      padding:8px 14px;
-      border-radius:999px;
-      background:rgba(239,68,68,.15);
-      color:#ef4444;
-      font-weight:800;
-      font-size:13px;
-      margin-bottom:14px;
-    }
+    .hero{padding:70px 20px;text-align:center;background:radial-gradient(circle at top,#111,#000 70%)}
 
-    h1{
-      font-size:32px;
-      line-height:1.15;
-      margin:0 0 10px;
-      font-weight:900;
-    }
+    .logo{width:220px;margin-bottom:30px}
 
-    .shoot{color:#ef4444}
+    .hero h1{color:#ff1a1a;font-size:48px;letter-spacing:4px;margin-bottom:20px}
 
-    .subtitle{
-      color:#cfcfcf;
-      font-size:15px;
-      margin-bottom:18px;
-    }
+    .hero h2{font-size:22px;line-height:1.4}
+    .hero h2 span{color:#ff1a1a}
 
-    .old{
-      color:#8f8f8f;
-      text-decoration:line-through;
-      font-size:16px;
-    }
+    .section{padding:60px 20px;max-width:900px;margin:auto}
 
-    .price{
-      font-size:42px;
-      font-weight:900;
-      color:#22c55e;
-      margin:6px 0 16px;
-    }
+    .video-title{background:#ff1a1a;text-align:center;padding:12px;font-weight:700;margin-bottom:30px}
 
-    .cta{
-      width:100%;
-      height:56px;
-      border:none;
-      border-radius:16px;
-      background:linear-gradient(90deg,#ef4444,#7c3aed);
-      color:#fff;
-      font-size:17px;
-      font-weight:900;
-      letter-spacing:.4px;
-      cursor:pointer;
-      box-shadow:0 10px 30px rgba(239,68,68,.35);
-    }
+    .video-box{border:3px solid #ff1a1a;border-radius:14px;overflow:hidden;box-shadow:0 0 25px #ff1a1a55}
+    .video-box iframe{width:100%;height:320px;border:0}
 
-    .benefits{
-      margin-top:22px;
-      background:rgba(0,0,0,.35);
-      border-radius:18px;
-      padding:18px 16px;
-    }
+    .watching{text-align:center;margin-top:15px;color:#ff1a1a}
 
-    .benefits li{
-      list-style:none;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:8px 0;
-      color:#d6d6d6;
-      font-size:15px;
-    }
+    .price-box{background:#111;border-radius:18px;padding:35px;margin:50px 0;text-align:center;box-shadow:0 0 25px #ff1a1a44}
 
-    .check{color:#22c55e;font-weight:900}
+    .price-old{text-decoration:line-through;color:#777}
+    .price{font-size:52px;font-weight:900;color:#00ff66;margin:15px 0}
 
-    .cta2{
-      margin-top:20px;
-      width:100%;
-      height:52px;
-      border-radius:14px;
-      background:linear-gradient(90deg,#ef4444,#7c3aed);
-      color:#fff;
-      font-size:16px;
-      font-weight:900;
-      border:none;
-      cursor:pointer;
-    }
+    .btn{display:inline-block;padding:16px 34px;border:2px solid #ff1a1a;color:#fff;text-decoration:none;font-weight:700;border-radius:12px;transition:.3s}
+    .btn:hover{background:#ff1a1a}
 
-    .sticky{
-      position:fixed;
-      bottom:14px;
-      left:0;right:0;
-      display:flex;
-      justify-content:center;
-    }
+    .features li{list-style:none;padding:12px 0;border-bottom:1px solid #222}
+    .features li::before{content:'🔥 ';color:#ff1a1a}
 
-    .sticky a{
-      width:90%;
-      max-width:420px;
-      height:56px;
-      border-radius:18px;
-      background:linear-gradient(90deg,#ef4444,#7c3aed);
-      color:#fff;
-      font-weight:900;
-      font-size:16px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-decoration:none;
-      box-shadow:0 15px 40px rgba(124,58,237,.45);
-    }
+    .faq h3{color:#ff1a1a;text-align:center;margin-bottom:30px}
+    .faq-item{background:#222;padding:16px;border-radius:10px;margin-bottom:12px}
+
+    footer{background:#ff1a1a;text-align:center;padding:15px;font-size:14px;margin-top:70px}
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <span class="badge">🔥 OFERTA LIMITADA</span>
+  <div class="top-bar">DESCONTO VÁLIDO SOMENTE HOJE</div>
 
-    <h1>Ative o Painel <span class="shoot">AURA SHOOT</span></h1>
-    <div class="subtitle">Acesso imediato com melhorias reais no desempenho.</div>
+  <section class="hero">
+    <img src="aura-shoot.png" class="logo" alt="Aura Shoot">
+    <h1>AURA SHOOT</h1>
+    <h2>O ÚLTIMO TIRO É O QUE <span>DECIDE A PARTIDA</span></h2>
+    <p style="margin-top:25px;color:#ccc">O painel criado pra quem cansou de errar o tiro decisivo.</p>
+  </section>
 
-    <div class="old">R$ 62,90</div>
-    <div class="price">R$ 32,90</div>
+  <section class="section">
+    <div class="video-title">ASSISTA O VÍDEO COM ATENÇÃO</div>
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/SEU_VIDEO" allowfullscreen></iframe>
+    </div>
+    <div class="watching">434 pessoas assistindo agora</div>
+  </section>
 
-    <button class="cta" onclick="window.location.href='https://lastlink.com/seulink'">
-      EU QUERO 
-    </button>
+  <section class="section">
+    <div class="price-box">
+      <p class="price-old">de R$79,99</p>
+      <div class="price">R$ 9,99</div>
+      <a href="#" class="btn">COMPRAR AGORA</a>
+    </div>
+  </section>
 
-    <ul class="benefits">
-      <li><span class="check">✔</span> Atualizações contínuas</li>
-      <li><span class="check">✔</span> Configuração simples</li>
-      <li><span class="check">✔</span> Suporte incluso</li>
-      <li><span class="check">✔</span> Acesso imediato</li>
-    </ul>
+  <section class="section faq">
+    <h3>DÚVIDAS FREQUENTES</h3>
+    <div class="faq-item">O painel está atualizado?</div>
+    <div class="faq-item">Funciona em Android e iOS?</div>
+    <div class="faq-item">Quando recebo o acesso?</div>
+    <div class="faq-item">E se eu não gostar?</div>
+  </section>
 
-    <button class="cta2" onclick="window.location.href='https://lastlink.com/seulink'">
-      ATIVAR AGORA
-    </button>
-  </div>
-
-  <div class="sticky">
-    <a href="https://lastlink.com/seulink">ATIVAR AGORA</a>
-  </div>
+  <footer>© 2025 Aura Shoot — Todos os direitos reservados</footer>
 
 </body>
 </html>
