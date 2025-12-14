@@ -51,37 +51,77 @@
   <div class="top-bar">DESCONTO VÁLIDO SOMENTE HOJE</div>
 
   <section class="hero">
-    <img src="aura-shoot.png" class="logo" alt="Aura Shoot">
-    <h1>AURA SHOOT</h1>
-    <h2>O ÚLTIMO TIRO É O QUE <span>DECIDE A PARTIDA</span></h2>
-    <p style="margin-top:25px;color:#ccc">O painel criado pra quem cansou de errar o tiro decisivo.</p>
+    <h1 class="neon-title">AURA SHOOT</h1>
+    <h2 class="headline">MIRA FULL <span class="red">VERMELHO</span> AINDA <span class="red">HOJE</span>!</h2>
   </section>
 
   <section class="section">
     <div class="video-title">ASSISTA O VÍDEO COM ATENÇÃO</div>
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/SEU_VIDEO" allowfullscreen></iframe>
+    <div class="video-box neon-red">
+      <iframe
+        src="https://www.youtube.com/embed/0xWty3uy7pU?autoplay=1&mute=1&rel=0&modestbranding=1"
+        allowfullscreen
+        loading="lazy"></iframe>
     </div>
-    <div class="watching">434 pessoas assistindo agora</div>
   </section>
 
   <section class="section">
-    <div class="price-box">
-      <p class="price-old">de R$79,99</p>
-      <div class="price">R$ 9,99</div>
-      <a href="#" class="btn">COMPRAR AGORA</a>
+    <div class="price-box neon-red">
+      <h3 class="plan-title">AURA SHOOT</h3>
+      <ul class="features">
+        <li><span class="ok">✔</span> Aimbot</li>
+        <li><span class="ok">✔</span> Aimlock</li>
+        <li><span class="ok">✔</span> Full Head</li>
+        <li><span class="ok">✔</span> Headtrick</li>
+        <li><span class="ok">✔</span> Sensi Plus</li>
+        <li><span class="ok">✔</span> No Recoil</li>
+        <li><span class="ok">✔</span> Mira não treme</li>
+        <li><span class="ok">✔</span> Suporte 24H</li>
+        <li><span class="ok">✔</span> AntiBan</li>
+        <li><span class="ok">✔</span> AntiBlacklist</li>
+        <li><span class="ok">✔</span> Login e Tutorial</li>
+      </ul>
+      <p class="price-old">de R$ 62,90</p>
+      <div class="price neon-green">R$ 32,90</div>
+      <button class="btn neon-btn" onclick="clickAnim(this)">COMPRAR AGORA</button>
     </div>
   </section>
 
   <section class="section faq">
     <h3>DÚVIDAS FREQUENTES</h3>
-    <div class="faq-item">O painel está atualizado?</div>
-    <div class="faq-item">Funciona em Android e iOS?</div>
-    <div class="faq-item">Quando recebo o acesso?</div>
-    <div class="faq-item">E se eu não gostar?</div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong>Recebo Atualização Grátis?</strong>
+      <div class="faq-answer">Sim! Você recebe atualização gratuita quando disponível.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong>Tenho risco de banimento?</strong>
+      <div class="faq-answer">Não! Nosso painel não tem risco de banimento, pode ser usado em conta principal.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong>Quando Recebo o Acesso?</strong>
+      <div class="faq-answer">Após confirmar a compra, você recebe diretamente seu painel pelo seu E-mail.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong>Como vou saber baixar?</strong>
+      <div class="faq-answer">Após a compra, você recebe o tutorial bem explicado junto com seu painel pelo seu E-mail.</div>
+    </div>
   </section>
 
   <footer>© 2025 Aura Shoot — Todos os direitos reservados</footer>
+
+  <script>
+    function toggleFaq(el){
+      el.classList.toggle('open');
+    }
+    function clickAnim(btn){
+      btn.classList.add('clicked');
+      setTimeout(()=>btn.classList.remove('clicked'),300);
+    }
+  </script>
 
 </body>
 </html>
