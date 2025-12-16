@@ -12,7 +12,13 @@
 body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
 
 /* TOPO */
-.top-bar{background:#ff1a1a;text-align:center;padding:10px;font-weight:800;font-size:14px}
+.top-bar{
+  background:#ff1a1a;
+  text-align:center;
+  padding:10px;
+  font-weight:800;
+  font-size:14px;
+}
 
 /* HERO */
 .hero{
@@ -20,21 +26,31 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   text-align:center;
   background:radial-gradient(circle at top,#111,#000 70%);
 }
-.hero h1{
-  color:#ff1a1a;
-  font-size:56px;
-  font-weight:900;
-  letter-spacing:4px;
-  margin-bottom:6px;
-  text-shadow:0 0 6px #ff1a1a,0 0 14px #ff1a1a;
+
+/* LOGO IMAGEM */
+.hero-logo{
+  max-width:320px;
+  width:100%;
+  margin-bottom:8px;
+  filter:
+    drop-shadow(0 0 6px #ff1a1a)
+    drop-shadow(0 0 14px #ff1a1a);
 }
-.hero h2{font-size:22px;margin-bottom:14px}
+
+.hero h2{
+  font-size:22px;
+  margin-bottom:14px;
+}
 .hero h2 span{color:#ff1a1a}
 
 /* SECTION */
-.section{padding:35px 20px;max-width:900px;margin:auto}
+.section{
+  padding:35px 20px;
+  max-width:900px;
+  margin:auto;
+}
 
-/* TEXTO VÍDEO */
+/* TEXTO DO VÍDEO */
 .video-title{
   text-align:center;
   font-weight:700;
@@ -49,10 +65,16 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   padding-top:56.25%;
   border-radius:16px;
   overflow:hidden;
-  box-shadow:0 0 20px #ff1a1a,0 0 50px rgba(255,26,26,.9);
+  box-shadow:
+    0 0 20px #ff1a1a,
+    0 0 40px #ff1a1a,
+    0 0 70px rgba(255,26,26,.9);
 }
 .video-box iframe{
-  position:absolute;top:0;left:0;width:100%;height:100%;border:0
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  border:0;
 }
 .video-box::before{
   content:'';
@@ -73,6 +95,7 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   text-align:center;
   box-shadow:0 0 30px #ff1a1a66;
 }
+
 .features li{
   list-style:none;
   padding:14px 0 14px 42px;
@@ -97,7 +120,13 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
 }
 
 .price-old{text-decoration:line-through;color:#777}
-.price{font-size:52px;font-weight:900;color:#00ff66;margin:15px 0}
+.price{
+  font-size:52px;
+  font-weight:900;
+  color:#00ff66;
+  margin:15px 0;
+}
+
 .btn{
   padding:16px 34px;
   border:2px solid #ff1a1a;
@@ -109,11 +138,10 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
 }
 .btn:hover{background:#ff1a1a}
 
-/* BLOCO ESTILO IMAGEM (ANTIBAN / PROVA) */
+/* BLOCO PROVA / ANTIBAN */
 .proof{
   padding:70px 20px;
   text-align:center;
-  background:#000;
 }
 .proof h2{
   font-size:32px;
@@ -125,7 +153,8 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   font-size:22px;
   margin-bottom:35px;
 }
-.proof .highlight{color:#00ffff}
+.highlight{color:#00ffff}
+
 .proof-box{
   max-width:420px;
   margin:0 auto;
@@ -163,7 +192,7 @@ footer{
 <div class="top-bar">DESCONTO VÁLIDO SOMENTE HOJE</div>
 
 <section class="hero">
-  <h1>AURA SHOOT</h1>
+  <img src="AURA-SHOOT.png" alt="Aura Shoot" class="hero-logo">
   <h2>MIRA FULL <span>VERMELHO</span> AINDA <span>HOJE</span>!</h2>
 </section>
 
@@ -176,8 +205,10 @@ footer{
   </div>
 
   <div class="video-box">
-    <iframe src="https://www.youtube.com/embed/0xWty3uy7pU?rel=0&modestbranding=1"
-      allowfullscreen loading="lazy"></iframe>
+    <iframe
+      src="https://www.youtube.com/embed/0xWty3uy7pU?rel=0&modestbranding=1"
+      allowfullscreen
+      loading="lazy"></iframe>
   </div>
 </section>
 
@@ -207,15 +238,16 @@ footer{
   </div>
 </section>
 
-<!-- BLOCO NOVO (IGUAL AO DA IMAGEM) -->
 <section class="proof">
   <h2>O <span>XIT MOBILE PLUS</span> É 100% ANTIBAN.</h2>
   <p>CANSADO DE PASSAR RAIVA NAS <span class="highlight">RANKEDS</span> E <span class="highlight">APOSTADOS</span>?</p>
 
   <div class="proof-box">
     <div class="check">✔</div>
-    <p>SE SUA SENSI NÃO ACOMPANHA SUA HABILIDADE,<br>
-    <span class="highlight">O PAINEL É PRA VOCÊ!</span></p>
+    <p>
+      SE SUA SENSI NÃO ACOMPANHA SUA HABILIDADE,<br>
+      <span class="highlight">O PAINEL É PRA VOCÊ!</span>
+    </p>
   </div>
 </section>
 
