@@ -5,101 +5,273 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aura Shoot</title>
 
-<style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#000;
-  color:#fff;
-  text-align:center;
-}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 
-/* BARRA TOPO */
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
+
+/* TOPO */
 .top-bar{
-  background:#ff0000;
+  background:#ff1a1a;
+  text-align:center;
   padding:10px;
   font-weight:800;
+  font-size:14px
 }
 
 /* HERO */
 .hero{
-  padding:40px 20px 30px;
+  padding:70px 20px 40px;
+  text-align:center;
+  background:radial-gradient(circle at top,#111,#000 70%);
 }
-
-/* LOGO */
-.hero-logo{
-  max-width:320px;
-  width:100%;
-  margin-bottom:12px;
-  filter:
-    drop-shadow(0 0 6px #ff1a1a)
-    drop-shadow(0 0 14px #ff1a1a);
+.hero h1{
+  color:#ff1a1a;
+  font-size:56px;
+  font-weight:900;
+  letter-spacing:4px;
+  margin-bottom:6px;
+  text-shadow:0 0 6px #ff1a1a,0 0 14px #ff1a1a;
 }
-
-/* TEXTO PRINCIPAL */
 .hero h2{
-  font-size:26px;
-  margin:10px 0 6px;
+  font-size:22px;
+  margin-bottom:14px
+}
+.hero h2 span{color:#ff1a1a}
+
+/* SECTION */
+.section{
+  padding:35px 20px;
+  max-width:900px;
+  margin:auto
+}
+
+/* TEXTO VÍDEO */
+.video-title{
+  text-align:center;
+  font-weight:700;
+  font-size:18px;
+  margin-bottom:18px
+}
+
+/* VÍDEO */
+.video-box{
+  position:relative;
+  width:100%;
+  padding-top:56.25%;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 0 20px #ff1a1a,0 0 50px rgba(255,26,26,.9);
+}
+.video-box iframe{
+  position:absolute;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  border:0
+}
+.video-box::before{
+  content:'';
+  position:absolute;
+  inset:-4px;
+  border-radius:18px;
+  background:linear-gradient(90deg,#ff1a1a,#ff4d4d,#ff1a1a);
+  filter:blur(22px);
+  z-index:-1;
+}
+
+/* BENEFÍCIOS */
+.price-box{
+  background:#111;
+  border-radius:18px;
+  padding:35px;
+  margin:45px 0;
+  text-align:center;
+  box-shadow:0 0 30px #ff1a1a66;
+}
+.features li{
+  list-style:none;
+  padding:14px 0 14px 42px;
+  border-bottom:1px solid #222;
+  position:relative;
+  font-weight:600;
+}
+.features li::before{
+  content:'✔';
+  position:absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:#00ff66;
+  color:#000;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 10px #00ff66,0 0 20px #00ff6688;
+}
+
+.price-old{
+  text-decoration:line-through;
+  color:#777
+}
+.price{
+  font-size:52px;
+  font-weight:900;
+  color:#00ff66;
+  margin:15px 0
+}
+
+/* BOTÃO */
+.btn{
+  display:inline-block;
+  padding:16px 34px;
+  border:2px solid #ff1a1a;
+  background:none;
+  color:#fff;
+  font-weight:800;
+  border-radius:12px;
+  cursor:pointer;
+  text-decoration:none;
+}
+.btn:hover{
+  background:#ff1a1a
+}
+
+/* BLOCO PROVA / ANTIBAN */
+.proof{
+  padding:70px 20px;
+  text-align:center;
+  background:#000;
+}
+.proof h2{
+  font-size:32px;
+  font-weight:900;
+  margin-bottom:25px;
+}
+.proof h2 span{color:#00ffff}
+.proof p{
+  font-size:22px;
+  margin-bottom:35px;
+}
+.proof .highlight{color:#00ffff}
+.proof-box{
+  max-width:420px;
+  margin:0 auto;
+  background:#0b0b0b;
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 0 40px rgba(0,255,255,.35);
+}
+.check{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#00ff66;
+  margin:20px auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  color:#000;
   font-weight:900;
 }
 
-.hero h2 span{
-  color:#ff0000;
-}
-
-/* TEXTO SECUNDÁRIO (SEM AZUL) */
-.hero p{
-  font-size:18px;
-  margin:0;
-  font-weight:700;
-  line-height:1.4;
-}
-
-.hero p span{
-  color:#ff0000;
-}
-
-/* CAIXA DO VÍDEO (YOUTUBE STYLE) */
-.video-box{
-  max-width:360px;
-  margin:30px auto;
-  aspect-ratio:16/9;
-  border-radius:12px;
-  border:2px solid #ff0000;
-  box-shadow:
-    0 0 12px #ff0000,
-    0 0 28px #ff0000;
-  overflow:hidden;
+/* FOOTER */
+footer{
+  background:#ff1a1a;
+  text-align:center;
+  padding:15px;
+  font-size:14px;
+  margin-top:60px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="top-bar">
-  DESCONTO VÁLIDO SOMENTE HOJE
-</div>
+<div class="top-bar">DESCONTO VÁLIDO SOMENTE HOJE</div>
 
 <section class="hero">
-
-  <!-- LOGO -->
-  <img src="aura-shoot.png" alt="Aura Shoot" class="hero-logo">
-
-  <!-- TEXTO -->
+  <h1>AURA SHOOT</h1>
   <h2>MIRA FULL <span>VERMELHO</span> AINDA <span>HOJE</span>!</h2>
-
-  <p>
-    ESSE AURA SHOOT TRANSFORMOU O JOGO DE 
-    <span>10.000 PLAYERS</span> EM UMA 
-    <span>MÁQUINA DE CAPA</span>
-  </p>
-
 </section>
 
-<!-- VÍDEO -->
-<div class="video-box">
-  <!-- aqui entra o iframe do vídeo -->
-</div>
+<section class="section">
+  <div class="video-title">
+    ESSE AURA SHOOT TRANSFORMOU O JOGO DE
+    <span style="color:#ff1a1a">10.000 PLAYERS</span>
+    EM UMA
+    <span style="color:#ff1a1a">MÁQUINA DE CAPA</span>
+  </div>
+
+  <div class="video-box">
+    <iframe
+      src="https://www.youtube.com/embed/0xWty3uy7pU?rel=0&modestbranding=1"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<section class="section">
+  <div class="price-box">
+    <h3>AURA SHOOT</h3>
+
+    <ul class="features">
+      <li>+20 Funções</li>
+      <li>Aimbot</li>
+      <li>Aimbot 2X</li>
+      <li>Aimbot 4X</li>
+      <li>Aimlock</li>
+      <li>Precision</li>
+      <li>Super Touch</li>
+      <li>Touch IA</li>
+      <li>Full Head</li>
+      <li>No Recoil</li>
+      <li>Mira não treme</li>
+      <li>Suporte 24H</li>
+      <li>AntiBan</li>
+      <li>AntiBlacklist</li>
+      <li>Login e Tutorial</li>
+    </ul>
+
+    <p class="price-old">de R$ 62,90</p>
+    <div class="price">R$ 32,90</div>
+
+    <a
+      href="https://lastlink.com/p/CEE793785/checkout-payment?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAOtmZ1leHRuA2FlbQExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp1BFI7dDAxQ5Z4JJqxn6hWIUQj_levj979g-adrXgapm7jV-LxFluKAAERDg_aem_rjtmWYBd-5Nw1TAEVnQ1pA"
+      class="btn"
+      target="_blank"
+    >
+      EU QUERO
+    </a>
+  </div>
+</section>
+
+<section class="proof">
+  <h2>O <span>AURA SHOOT</span> É 100% ANTIBAN.</h2>
+  <p>
+    CANSADO DE PASSAR RAIVA NAS
+    <span class="highlight">RANKEDS</span>
+    E
+    <span class="highlight">APOSTADOS</span>?
+  </p>
+
+  <div class="proof-box">
+    <div class="check">✔</div>
+    <p>
+      SE SUA SENSI NÃO ACOMPANHA SUA HABILIDADE,<br>
+      <span class="highlight">O PAINEL É PRA VOCÊ!</span>
+    </p>
+  </div>
+</section>
+
+<footer>© 2025 Aura Shoot — Todos os direitos reservados</footer>
 
 </body>
 </html>
