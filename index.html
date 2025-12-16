@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aura Shoot</title>
 
-  <!-- FONTE MAIS GORDINHA -->
+  <!-- FONTE GORDINHA -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
 
   <style>
@@ -14,33 +14,42 @@
 
     .top-bar{background:#ff1a1a;text-align:center;padding:10px;font-weight:700;font-size:14px}
 
-    .hero{padding:70px 20px;text-align:center;background:radial-gradient(circle at top,#111,#000 70%)}
+    .hero{
+      padding:70px 20px 40px;
+      text-align:center;
+      background:radial-gradient(circle at top,#111,#000 70%);
+    }
 
-    /* TÍTULO AURA SHOOT */
+    /* AURA SHOOT (NEON MAIS FRACO) */
     .hero h1{
       color:#ff1a1a;
       font-size:56px;
       font-weight:900;
       letter-spacing:4px;
-      margin-bottom:20px;
+      margin-bottom:6px;
       text-shadow:
-        0 0 10px #ff1a1a,
-        0 0 25px #ff1a1a,
-        0 0 45px #ff1a1a;
+        0 0 6px #ff1a1a,
+        0 0 14px #ff1a1a;
     }
 
-    .hero h2{font-size:22px;line-height:1.4}
+    /* TEXTO LOGO ABAIXO DO TÍTULO (MAIS JUNTO) */
+    .hero h2{
+      font-size:22px;
+      line-height:1.3;
+      margin-bottom:14px;
+    }
     .hero h2 span{color:#ff1a1a}
 
-    .section{padding:60px 20px;max-width:900px;margin:auto}
+    .section{padding:35px 20px;max-width:900px;margin:auto}
 
-    /* REMOVE FUNDO VERMELHO DO TEXTO ACIMA DO VÍDEO */
+    /* TEXTO ACIMA DO VÍDEO MAIS PRÓXIMO DO h2 */
     .video-title{
       background:none;
       text-align:center;
       font-weight:700;
-      margin-bottom:25px;
       font-size:18px;
+      margin-top:0;
+      margin-bottom:18px;
     }
 
     /* VÍDEO PADRÃO YOUTUBE 16:9 */
@@ -65,7 +74,7 @@
       border:0;
     }
 
-    /* NEON MAIS FORTE NAS BORDAS */
+    /* NEON FORTE NAS BORDAS DO VÍDEO */
     .video-box::before{
       content:'';
       position:absolute;
@@ -80,17 +89,39 @@
       background:#111;
       border-radius:18px;
       padding:35px;
-      margin:50px 0;
+      margin:45px 0;
       text-align:center;
       box-shadow:0 0 30px #ff1a1a66;
     }
 
+    /* BENEFÍCIOS COM ✔ VERDE EM CÍRCULO */
     .features li{
       list-style:none;
-      padding:12px 0;
+      padding:14px 0 14px 42px;
       border-bottom:1px solid #222;
+      position:relative;
+      font-weight:600;
     }
-    .features li::before{content:'🔥 ';color:#ff1a1a}
+
+    .features li::before{
+      content:'✔';
+      position:absolute;
+      left:0;
+      top:50%;
+      transform:translateY(-50%);
+      width:26px;
+      height:26px;
+      border-radius:50%;
+      background:#00ff66;
+      color:#000;
+      font-weight:900;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:
+        0 0 10px #00ff66,
+        0 0 20px #00ff6688;
+    }
 
     .price-old{text-decoration:line-through;color:#777}
     .price{font-size:52px;font-weight:900;color:#00ff66;margin:15px 0}
@@ -108,10 +139,13 @@
     }
     .btn:hover{background:#ff1a1a}
 
-    .faq h3{color:#ff1a1a;text-align:center;margin-bottom:30px}
-    .faq-item{background:#222;padding:16px;border-radius:10px;margin-bottom:12px}
-
-    footer{background:#ff1a1a;text-align:center;padding:15px;font-size:14px;margin-top:70px}
+    footer{
+      background:#ff1a1a;
+      text-align:center;
+      padding:15px;
+      font-size:14px;
+      margin-top:60px;
+    }
   </style>
 </head>
 
