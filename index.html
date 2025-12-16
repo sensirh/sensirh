@@ -32,13 +32,16 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   font-weight:900;
   letter-spacing:4px;
   margin-bottom:6px;
-  text-shadow:0 0 6px #ff1a1a,0 0 14px #ff1a1a;
+  text-shadow:0 0 6px #ff1a1a,0 0 18px #ff1a1a;
 }
 .hero h2{
   font-size:22px;
   margin-bottom:14px
 }
-.hero h2 span{color:#ff1a1a}
+.hero h2 span{
+  color:#ff1a1a;
+  text-shadow:0 0 10px rgba(255,26,26,.8);
+}
 
 /* SECTION */
 .section{
@@ -62,7 +65,7 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   padding-top:56.25%;
   border-radius:16px;
   overflow:hidden;
-  box-shadow:0 0 20px #ff1a1a,0 0 50px rgba(255,26,26,.9);
+  box-shadow:0 0 20px #ff1a1a,0 0 55px rgba(255,26,26,.9);
 }
 .video-box iframe{
   position:absolute;
@@ -77,7 +80,7 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   inset:-4px;
   border-radius:18px;
   background:linear-gradient(90deg,#ff1a1a,#ff4d4d,#ff1a1a);
-  filter:blur(22px);
+  filter:blur(24px);
   z-index:-1;
 }
 
@@ -88,7 +91,7 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   padding:35px;
   margin:45px 0;
   text-align:center;
-  box-shadow:0 0 30px #ff1a1a66;
+  box-shadow:0 0 35px rgba(255,26,26,.6);
 }
 .features li{
   list-style:none;
@@ -137,9 +140,11 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   border-radius:12px;
   cursor:pointer;
   text-decoration:none;
+  box-shadow:0 0 12px rgba(255,26,26,.6);
 }
 .btn:hover{
-  background:#ff1a1a
+  background:#ff1a1a;
+  box-shadow:0 0 25px rgba(255,26,26,.9);
 }
 
 /* BLOCO PROVA / ANTIBAN */
@@ -153,19 +158,25 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   font-weight:900;
   margin-bottom:25px;
 }
-.proof h2 span{color:#00ffff}
+.proof h2 span{
+  color:#ff1a1a;
+  text-shadow:0 0 12px rgba(255,26,26,.8);
+}
 .proof p{
   font-size:22px;
   margin-bottom:35px;
 }
-.proof .highlight{color:#00ffff}
+.proof .highlight{
+  color:#ff1a1a;
+  font-weight:800;
+}
 .proof-box{
   max-width:420px;
   margin:0 auto;
   background:#0b0b0b;
   border-radius:20px;
   padding:25px;
-  box-shadow:0 0 40px rgba(0,255,255,.35);
+  box-shadow:0 0 45px rgba(255,26,26,.5);
 }
 .check{
   width:60px;
@@ -243,11 +254,8 @@ footer{
     <p class="price-old">de R$ 62,90</p>
     <div class="price">R$ 32,90</div>
 
-    <a
-      href="https://lastlink.com/p/CEE793785/checkout-payment?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAOtmZ1leHRuA2FlbQExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp1BFI7dDAxQ5Z4JJqxn6hWIUQj_levj979g-adrXgapm7jV-LxFluKAAERDg_aem_rjtmWYBd-5Nw1TAEVnQ1pA"
-      class="btn"
-      target="_blank"
-    >
+    <a href="https://lastlink.com/p/CEE793785/checkout-payment?utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+       class="btn" target="_blank">
       EU QUERO
     </a>
   </div>
