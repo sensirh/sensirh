@@ -4,41 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aura Shoot</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- FONTE MAIS GORDINHA -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Orbitron',sans-serif}
-    body{background:#000;color:#fff}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
 
     .top-bar{background:#ff1a1a;text-align:center;padding:10px;font-weight:700;font-size:14px}
 
     .hero{padding:70px 20px;text-align:center;background:radial-gradient(circle at top,#111,#000 70%)}
 
-    .logo{width:220px;margin-bottom:30px}
-
-    .hero h1{color:#ff1a1a;font-size:48px;letter-spacing:4px;margin-bottom:20px}
+    /* TÍTULO AURA SHOOT */
+    .hero h1{
+      color:#ff1a1a;
+      font-size:56px;
+      font-weight:900;
+      letter-spacing:4px;
+      margin-bottom:20px;
+      text-shadow:
+        0 0 10px #ff1a1a,
+        0 0 25px #ff1a1a,
+        0 0 45px #ff1a1a;
+    }
 
     .hero h2{font-size:22px;line-height:1.4}
     .hero h2 span{color:#ff1a1a}
 
     .section{padding:60px 20px;max-width:900px;margin:auto}
 
-    .video-title{background:#ff1a1a;text-align:center;padding:12px;font-weight:700;margin-bottom:30px}
+    /* REMOVE FUNDO VERMELHO DO TEXTO ACIMA DO VÍDEO */
+    .video-title{
+      background:none;
+      text-align:center;
+      font-weight:700;
+      margin-bottom:25px;
+      font-size:18px;
+    }
 
-    .video-box{border:3px solid #ff1a1a;border-radius:14px;overflow:hidden;box-shadow:0 0 25px #ff1a1a55}
-    .video-box iframe{width:100%;height:320px;border:0}
+    /* VÍDEO PADRÃO YOUTUBE 16:9 */
+    .video-box{
+      position:relative;
+      width:100%;
+      padding-top:56.25%;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:
+        0 0 20px #ff1a1a,
+        0 0 40px #ff1a1a,
+        0 0 70px rgba(255,26,26,.9);
+    }
 
-    .watching{text-align:center;margin-top:15px;color:#ff1a1a}
+    .video-box iframe{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
 
-    .price-box{background:#111;border-radius:18px;padding:35px;margin:50px 0;text-align:center;box-shadow:0 0 25px #ff1a1a44}
+    /* NEON MAIS FORTE NAS BORDAS */
+    .video-box::before{
+      content:'';
+      position:absolute;
+      inset:-4px;
+      border-radius:18px;
+      background:linear-gradient(90deg,#ff1a1a,#ff4d4d,#ff1a1a);
+      filter:blur(22px);
+      z-index:-1;
+    }
+
+    .price-box{
+      background:#111;
+      border-radius:18px;
+      padding:35px;
+      margin:50px 0;
+      text-align:center;
+      box-shadow:0 0 30px #ff1a1a66;
+    }
+
+    .features li{
+      list-style:none;
+      padding:12px 0;
+      border-bottom:1px solid #222;
+    }
+    .features li::before{content:'🔥 ';color:#ff1a1a}
 
     .price-old{text-decoration:line-through;color:#777}
     .price{font-size:52px;font-weight:900;color:#00ff66;margin:15px 0}
 
-    .btn{display:inline-block;padding:16px 34px;border:2px solid #ff1a1a;color:#fff;text-decoration:none;font-weight:700;border-radius:12px;transition:.3s}
+    .btn{
+      display:inline-block;
+      padding:16px 34px;
+      border:2px solid #ff1a1a;
+      color:#fff;
+      background:none;
+      font-weight:700;
+      border-radius:12px;
+      cursor:pointer;
+      transition:.3s;
+    }
     .btn:hover{background:#ff1a1a}
-
-    .features li{list-style:none;padding:12px 0;border-bottom:1px solid #222}
-    .features li::before{content:'🔥 ';color:#ff1a1a}
 
     .faq h3{color:#ff1a1a;text-align:center;margin-bottom:30px}
     .faq-item{background:#222;padding:16px;border-radius:10px;margin-bottom:12px}
@@ -46,81 +114,56 @@
     footer{background:#ff1a1a;text-align:center;padding:15px;font-size:14px;margin-top:70px}
   </style>
 </head>
+
 <body>
 
   <div class="top-bar">DESCONTO VÁLIDO SOMENTE HOJE</div>
 
   <section class="hero">
-    <h1 class="neon-title">AURA SHOOT</h1>
-    <h2 class="headline">MIRA FULL <span class="red">VERMELHO</span> AINDA <span class="red">HOJE</span>!</h2>
+    <h1>AURA SHOOT</h1>
+    <h2>MIRA FULL <span>VERMELHO</span> AINDA <span>HOJE</span>!</h2>
   </section>
 
   <section class="section">
-    <div class="video-title">ESSE AURA SHOOT TRANSFORMOU O JOGO DE <span style="color:#ff1a1a">10.000 PLAYERS</span> EM UMA <span style="color:#ff1a1a">MÁQUINA DE CAPA!</span></div>
-    <div class="video-box neon-red">
+    <div class="video-title">
+      ESSE AURA SHOOT TRANSFORMOU O JOGO DE
+      <span style="color:#ff1a1a">10.000 PLAYERS</span>
+      EM UMA
+      <span style="color:#ff1a1a">MÁQUINA DE CAPA</span>
+    </div>
+
+    <div class="video-box">
       <iframe
-        src="https://www.youtube.com/embed/0xWty3uy7pU?autoplay=1&mute=1&rel=0&modestbranding=1"
+        src="https://www.youtube.com/embed/0xWty3uy7pU?rel=0&modestbranding=1"
         allowfullscreen
-        loading="lazy"></iframe>
+        loading="lazy">
+      </iframe>
     </div>
   </section>
 
   <section class="section">
-    <div class="price-box neon-red">
-      <h3 class="plan-title">AURA SHOOT</h3>
+    <div class="price-box">
+      <h3>AURA SHOOT</h3>
       <ul class="features">
-        <li><span class="ok">✔</span> Aimbot</li>
-        <li><span class="ok">✔</span> Aimlock</li>
-        <li><span class="ok">✔</span> Full Head</li>
-        <li><span class="ok">✔</span> Headtrick</li>
-        <li><span class="ok">✔</span> Sensi Plus</li>
-        <li><span class="ok">✔</span> No Recoil</li>
-        <li><span class="ok">✔</span> Mira não treme</li>
-        <li><span class="ok">✔</span> Suporte 24H</li>
-        <li><span class="ok">✔</span> AntiBan</li>
-        <li><span class="ok">✔</span> AntiBlacklist</li>
-        <li><span class="ok">✔</span> Login e Tutorial</li>
+        <li>Aimbot</li>
+        <li>Aimlock</li>
+        <li>Full Head</li>
+        <li>Headtrick</li>
+        <li>Sensi Plus</li>
+        <li>No Recoil</li>
+        <li>Mira não treme</li>
+        <li>Suporte 24H</li>
+        <li>AntiBan</li>
+        <li>AntiBlacklist</li>
+        <li>Login e Tutorial</li>
       </ul>
       <p class="price-old">de R$ 62,90</p>
-      <div class="price neon-green">R$ 32,90</div>
-      <button class="btn neon-btn" onclick="clickAnim(this)">EU QUERO</button>
-    </div>
-  </section>
-
-  <section class="section faq">
-    <h3>DÚVIDAS FREQUENTES</h3>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <strong>Recebo Atualização Grátis?</strong>
-      <div class="faq-answer">Sim! Você recebe atualização gratuita quando disponível.</div>
-    </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <strong>Tenho risco de banimento?</strong>
-      <div class="faq-answer">Não! Nosso painel não tem risco de banimento, pode ser usado em conta principal.</div>
-    </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <strong>Quando Recebo o Acesso?</strong>
-      <div class="faq-answer">Após confirmar a compra, você recebe diretamente seu painel pelo seu E-mail.</div>
-    </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <strong>Como vou saber baixar?</strong>
-      <div class="faq-answer">Após a compra, você recebe o tutorial bem explicado junto com seu painel pelo seu E-mail.</div>
+      <div class="price">R$ 32,90</div>
+      <button class="btn">EU QUERO</button>
     </div>
   </section>
 
   <footer>© 2025 Aura Shoot — Todos os direitos reservados</footer>
 
-  <script>
-    function toggleFaq(el){
-      el.classList.toggle('open');
-    }
-    function clickAnim(btn){
-      btn.classList.add('clicked');
-      setTimeout(()=>btn.classList.remove('clicked'),300);
-    }
-  </script>
-
 </body>
+</html>
