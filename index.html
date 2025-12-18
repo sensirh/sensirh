@@ -50,13 +50,15 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   margin:auto
 }
 
-/* VÍDEO */
+/* TEXTO VÍDEO */
 .video-title{
   text-align:center;
   font-weight:700;
   font-size:18px;
   margin-bottom:18px
 }
+
+/* VÍDEO */
 .video-box{
   position:relative;
   width:100%;
@@ -72,50 +74,43 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   height:100%;
   border:0
 }
+.video-box::before{
+  content:'';
+  position:absolute;
+  inset:-4px;
+  border-radius:18px;
+  background:linear-gradient(90deg,#ff1a1a,#ff4d4d,#ff1a1a);
+  filter:blur(24px);
+  z-index:-1;
+}
 
 /* ===== FEEDBACKS ===== */
-.feedbacks{
-  margin-top:50px;
+.feedback-title{
   text-align:center;
-}
-.feedbacks h3{
   font-size:26px;
   font-weight:900;
-  margin-bottom:25px;
+  margin:40px 0 20px;
+}
+.feedback-title span{
+  color:#ff1a1a;
+  text-shadow:0 0 10px rgba(255,26,26,.8);
 }
 .carousel{
-  position:relative;
-  max-width:360px;
-  margin:0 auto;
-  overflow:hidden;
-}
-.carousel-track{
   display:flex;
-  transition:.4s ease;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:10px;
 }
+.carousel::-webkit-scrollbar{display:none}
 .carousel img{
-  width:100%;
-  border-radius:18px;
-  box-shadow:0 0 35px rgba(255,26,26,.8);
+  height:320px;
+  border-radius:16px;
+  scroll-snap-align:center;
+  box-shadow:0 0 25px rgba(255,26,26,.6);
 }
-.carousel-btn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:#ff1a1a;
-  border:none;
-  color:#fff;
-  font-size:26px;
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  cursor:pointer;
-  font-weight:900;
-}
-.prev{left:-20px}
-.next{right:-20px}
 
-/* PLANO */
+/* BENEFÍCIOS */
 .price-box{
   background:#111;
   border-radius:18px;
@@ -146,11 +141,21 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   display:flex;
   align-items:center;
   justify-content:center;
+  box-shadow:0 0 10px #00ff66,0 0 20px #00ff6688;
 }
 
-.price-old{text-decoration:line-through;color:#777}
-.price{font-size:52px;font-weight:900;color:#00ff66;margin:15px 0}
+.price-old{
+  text-decoration:line-through;
+  color:#777
+}
+.price{
+  font-size:52px;
+  font-weight:900;
+  color:#00ff66;
+  margin:15px 0
+}
 
+/* BOTÃO */
 .btn{
   display:inline-block;
   padding:16px 34px;
@@ -161,16 +166,44 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   border-radius:12px;
   cursor:pointer;
   text-decoration:none;
+  box-shadow:0 0 12px rgba(255,26,26,.6);
 }
-.btn:hover{background:#ff1a1a}
+.btn:hover{
+  background:#ff1a1a;
+  box-shadow:0 0 25px rgba(255,26,26,.9);
+}
 
-/* PROVA */
+/* BLOCO PROVA */
 .proof{
   padding:70px 20px;
   text-align:center;
+  background:#000;
 }
-.proof h2{font-size:32px;font-weight:900}
-.proof h2 span{color:#ff1a1a}
+.proof h2{
+  font-size:32px;
+  font-weight:900;
+  margin-bottom:25px;
+}
+.proof h2 span{
+  color:#ff1a1a;
+  text-shadow:0 0 12px rgba(255,26,26,.8);
+}
+.proof p{
+  font-size:22px;
+  margin-bottom:35px;
+}
+.proof .highlight{
+  color:#ff1a1a;
+  font-weight:800;
+}
+.proof-box{
+  max-width:420px;
+  margin:0 auto;
+  background:#0b0b0b;
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 0 45px rgba(255,26,26,.5);
+}
 .check{
   width:60px;
   height:60px;
@@ -202,35 +235,33 @@ footer{
 
 <section class="hero">
   <h1>AURA SHOOT</h1>
-  <h2>MIRA FULL <span>VERMELHO</span> AINDA <span>HOJE</span></h2>
+  <h2>MIRA FULL <span>VERMELHO</span> AINDA <span>HOJE</span>!</h2>
 </section>
 
 <section class="section">
   <div class="video-title">
-    ESSE AURA SHOOT TRANSFORMOU
-    <span style="color:#ff1a1a">MILHARES DE PLAYERS</span>
-    EM
+    ESSE AURA SHOOT TRANSFORMOU O JOGO DE
+    <span style="color:#ff1a1a">10.000 PLAYERS</span>
+    EM UMA
     <span style="color:#ff1a1a">MÁQUINA DE CAPA</span>
   </div>
 
   <div class="video-box">
-    <iframe src="https://www.youtube.com/embed/0xWty3uy7pU" allowfullscreen></iframe>
+    <iframe
+      src="https://www.youtube.com/embed/0xWty3uy7pU?rel=0&modestbranding=1"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
   </div>
 
   <!-- FEEDBACKS -->
-  <div class="feedbacks">
-    <h3>FEEDBACK DOS CLIENTES</h3>
-    <div class="carousel">
-      <button class="carousel-btn prev" onclick="move(-1)">‹</button>
-      <div class="carousel-track" id="track">
-        <img src="feedback1.jpg">
-        <img src="feedback2.jpg">
-        <img src="feedback3.jpg">
-        <img src="feedback4.jpg">
-        <img src="feedback5.jpg">
-      </div>
-      <button class="carousel-btn next" onclick="move(1)">›</button>
-    </div>
+  <h3 class="feedback-title">FEEDBACK DOS <span>CLIENTES</span></h3>
+  <div class="carousel">
+    <img src="feedback1.jpg">
+    <img src="feedback2.jpg">
+    <img src="feedback3.jpg">
+    <img src="feedback4.jpg">
+    <img src="feedback5.jpg">
   </div>
 </section>
 
@@ -239,34 +270,46 @@ footer{
     <h3>AURA SHOOT</h3>
     <ul class="features">
       <li>+20 Funções</li>
-      <li>Aimbot / Aimlock</li>
-      <li>Precision & Touch IA</li>
+      <li>Aimbot</li>
+      <li>Aimbot 2X</li>
+      <li>Aimbot 4X</li>
+      <li>Aimlock</li>
+      <li>Precision</li>
+      <li>Super Touch</li>
+      <li>Touch IA</li>
+      <li>Full Head</li>
       <li>No Recoil</li>
-      <li>AntiBan</li>
+      <li>Mira não treme</li>
       <li>Suporte 24H</li>
+      <li>AntiBan</li>
+      <li>AntiBlacklist</li>
+      <li>Login e Tutorial</li>
     </ul>
     <p class="price-old">de R$ 62,90</p>
     <div class="price">R$ 32,90</div>
-    <a href="https://lastlink.com/p/CEE793785/checkout-payment" class="btn" target="_blank">EU QUERO</a>
+    <a href="https://lastlink.com/p/CEE793785/checkout-payment?utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+       class="btn" target="_blank">EU QUERO</a>
   </div>
 </section>
 
 <section class="proof">
-  <h2><span>AURA SHOOT</span> É 100% ANTIBAN</h2>
-  <div class="check">✔</div>
+  <h2>O <span>AURA SHOOT</span> É 100% ANTIBAN.</h2>
+  <p>
+    CANSADO DE PASSAR RAIVA NAS
+    <span class="highlight">RANKEDS</span>
+    E
+    <span class="highlight">APOSTADOS</span>?
+  </p>
+  <div class="proof-box">
+    <div class="check">✔</div>
+    <p>
+      SE SUA SENSI NÃO ACOMPANHA SUA HABILIDADE,<br>
+      <span class="highlight">O PAINEL É PRA VOCÊ!</span>
+    </p>
+  </div>
 </section>
 
-<footer>© 2025 Aura Shoot</footer>
-
-<script>
-let index = 0
-function move(dir){
-  const track = document.getElementById('track')
-  const total = track.children.length
-  index = (index + dir + total) % total
-  track.style.transform = `translateX(-${index * 100}%)`
-}
-</script>
+<footer>© 2025 Aura Shoot — Todos os direitos reservados</footer>
 
 </body>
 </html>
