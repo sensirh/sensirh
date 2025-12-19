@@ -256,6 +256,26 @@ body{background:#000;color:#fff;font-family:'Montserrat',sans-serif}
   padding-left:18px;
   border-left:4px solid #ff1a1a;
 }
+  .scroll-indicator {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.scroll-indicator span {
+  width: 18px;
+  height: 18px;
+  border-bottom: 3px solid red;
+  border-right: 3px solid red;
+  transform: rotate(45deg);
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0% { transform: rotate(45deg) translate(0, 0); }
+  50% { transform: rotate(45deg) translate(6px, 6px); }
+  100% { transform: rotate(45deg) translate(0, 0); }
+}
 }
   
 /* SECTION */
@@ -542,6 +562,10 @@ footer{
     é transformar você em ameaça em qualquer lobby.”
   </div>
 </section>
+
+<div class="scroll-indicator">
+  <span></span>
+</div>
   
 <section class="section" id="planos">
   <div class="price-box">
